@@ -14,17 +14,7 @@
 
 int     main()
 {
-    char ch = 'A';
-    ft_putchar(ft_tolower(ch));
-    if (ft_isalnum(ch))
-        ft_putendl("ch is alnum");
-    if (!ft_isdigit(ch))
-        ft_putendl("ch is not digit");
-    if (ft_isalpha(ch))
-        ft_putendl("ch is alpha");
-    if (ft_isascii(ch))
-        ft_toupper(ch);
-    if (ft_isprint(ch))
-        ft_putchar(ch);
-    ft_putchar('\n');
+    char *src = "kitsuu ";
+    char dest[25] = "tule tännee ";
+    ft_putstr(ft_strncat(dest, src, 5));
 }

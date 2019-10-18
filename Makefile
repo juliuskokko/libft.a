@@ -14,12 +14,14 @@ NAME = libft.a
 
 SOURCE = ft_putchar.c ft_putstr.c ft_putnbr.c ft_putendl.c ft_putchar_fd.c ft_putstr_fd.c \
 		ft_putnbr_fd.c ft_putendl_fd.c ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c ft_isdigit.c \
-		ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c
+		ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_strcat.c \
+		ft_strncat.c
 
 
 OBJECTS = ft_putchar.o ft_putstr.o ft_putnbr.o ft_putendl.o ft_putchar_fd.o ft_putstr_fd.o \
 		ft_putnbr_fd.o ft_putendl_fd.o ft_strlen.o ft_strdup.o ft_strcpy.o ft_strncpy.o ft_isdigit.o \
-		ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o
+		ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_strcat.o \
+		ft_strncat.o
 
 
 FLAGS = -Wall -Werror -Wextra
