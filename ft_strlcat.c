@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 10:30:20 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/18 17:31:49 by jkokko           ###   ########.fr       */
+/*   Created: 2019/10/18 17:08:18 by jkokko            #+#    #+#             */
+/*   Updated: 2019/10/18 17:12:52 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     main()
+size_t	*ft_strlcat(char *dst, const char *src, size_t size)
 {
-    ft_putstr(ft_strstr("kissajokahiffas", "hiffa"));
+	
+	
+	return ();
 }

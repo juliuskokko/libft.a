@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkokko <jkokko@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 16:25:45 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/16 16:25:47 by jkokko           ###   ########.fr       */
+/*   Updated: 2019/10/18 17:15:42 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,8 @@ char    *ft_strcpy(char *dest, const char *src);
 char    *ft_strncpy(char *dest, const char *src, size_t count);
 char    *ft_strcat(char *dest, const char *src);
 char    *ft_strncat(char *dest, const char *src, size_t n);
+size_t	*ft_strlcat(char *dst, const char *src, size_t size);
+char	*ft_strstr(const char *haystack, const char *needle);
+
 
 #endif

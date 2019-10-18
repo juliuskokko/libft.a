@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 10:30:20 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/18 17:31:49 by jkokko           ###   ########.fr       */
+/*   Created: 2019/10/18 17:17:27 by jkokko            #+#    #+#             */
+/*   Updated: 2019/10/18 17:32:47 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "libft.h"
 
-int     main()
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    ft_putstr(ft_strstr("kissajokahiffas", "hiffa"));
-}
+
+}*/

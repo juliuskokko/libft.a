@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 10:30:20 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/18 17:31:49 by jkokko           ###   ########.fr       */
+/*   Created: 2019/10/18 17:17:22 by jkokko            #+#    #+#             */
+/*   Updated: 2019/10/18 18:04:41 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     main()
+const char	*ft_strstr(const char *haystack, const char *needle)
 {
-    ft_putstr(ft_strstr("kissajokahiffas", "hiffa"));
+	int i;
+	int y;
+
+	y = 0;
+	i = 0;
+	if (*needle == '\0')
+		return ((char*)haystack):
+	while (haystack[y] != '\0')
+	{
+		if (needle[i] == haystack[y])
+			i++;
+		else
+			i = 0;
+		y++;
+		if (needle[i] == '\0')
+			return ((char*)&haystack[y - i]);
+		if (haystack[y] == '\0')
+			return (NULL);
+	}
 }
