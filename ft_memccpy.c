@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 10:30:20 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/18 17:31:49 by jkokko           ###   ########.fr       */
+/*   Created: 2019/10/23 10:38:15 by jkokko            #+#    #+#             */
+/*   Updated: 2019/10/23 10:38:15 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libft.h"*/
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+void    *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	write(1, &c, 1);
-}
-
-void  ft_putstr(char const *s)
-{
-    int i;
+    size_t i;
 
     i = 0;
-    while (s[i] != '\0')
+    while (i < n)
     {
-        write(1, &s[i], 1);
+        ((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
+        if (((unsigned char*)dest)[i] == (unsigned char)c)
+            return ((void*)dest + i + 1);
         i++;
     }
-}
-
-int     main()
-{
-    int i = 1;
-    while (i-- > 0)
-        ft_putstr("mo");
+    return (NULL);
 }

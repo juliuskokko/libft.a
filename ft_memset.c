@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 10:30:20 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/18 17:31:49 by jkokko           ###   ########.fr       */
+/*   Created: 2019/10/23 10:11:59 by jkokko            #+#    #+#             */
+/*   Updated: 2019/10/23 10:11:59 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libft.h"*/
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+void    *ft_memset(void *dest, int ch, size_t count)
 {
-	write(1, &c, 1);
-}
-
-void  ft_putstr(char const *s)
-{
-    int i;
+    size_t i;
 
     i = 0;
-    while (s[i] != '\0')
+    while (i < count)
     {
-        write(1, &s[i], 1);
+        ((unsigned char*)dest)[i] = (unsigned char)ch;
         i++;
     }
-}
-
-int     main()
-{
-    int i = 1;
-    while (i-- > 0)
-        ft_putstr("mo");
+    return (dest);
 }
