@@ -6,7 +6,7 @@
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:30:20 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/25 12:31:30 by jkokko           ###   ########.fr       */
+/*   Updated: 2019/10/25 12:41:29 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,21 +104,20 @@ int		ft_strcmp(const char *s1, const char *s2)
 {
 	while ((*s1 && *s2) && ((unsigned char)*s1++ == (unsigned char)*s2++))
 		;
-	return ((int)((*--s1) - (*--s2)));
+	return (!(*s1 && *s2) ? (int)((*s1) - (*s2)) : (int)((*--s1) - (*--s2)));
 }
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while ((n--) && (*s1 && *s2))
-	{
-		if ((unsigned char)*s1++ != (unsigned char)*s2++)
-			break;
-	}
-	return ((*s1 && !(*s2)) || (*s2 && !(*s1)) ? (int)((*--s1) - (*--s2)) : (int)((*s1) - (*s2)));
+	while ((n--)
+	&& (*s1 && *s2)
+	&& ((unsigned char)*s1++ == (unsigned char)*s2++))
+		;
+	return (!(*s1 && *s2) ? (int)((*s1) - (*s2)) : (int)((*--s1) - (*--s2)));
 }
 
 int     main()
 {
-    printf("%d\n", ft_strcmp("csdd", "csd"));
+    printf("%d\n", ft_strncmp("csdddasdaad", "csdddasdaaddfgdfgdfgdfgdfg", 20));
     return (0);
 }
