@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 10:30:08 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/23 10:30:08 by jkokko           ###   ########.fr       */
+/*   Created: 2019/10/30 10:51:55 by jkokko            #+#    #+#             */
+/*   Updated: 2019/10/30 10:51:55 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void*   ft_memcpy(void *dest, const void *src, size_t count)
+#define WSPACES (' ' | '\n' | '\t' | ',')
+
+char *ft_strtrim(char const *s)
 {
     size_t i;
+    char *ptr;
 
     i = 0;
-    while (i < count)
-    {
-        ((unsigned char*)dest)[i] = ((unsigned char*)src)[i];
+    ptr = s;
+    while (*ptr++ == WSPACES)
         i++;
-    }
-    return (dest);
+    while (*ptr++)
+        ;
+    while (--*ptr == WSPACES)
+        i++;
+    if (!(ptr = (char*)malloc(sizeof(char) * (ft_strlen(s) - i + 1))))
+        return (NULL);
+    while (*s++ == WSPACES)
+        ;
+    while (i--)
+        *ptr++ = *s++;
+    *ptr = '\0';
+    return (ptr);
 }

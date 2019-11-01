@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/25 11:45:09 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/25 12:33:33 by jkokko           ###   ########.fr       */
+/*   Created: 2019/10/29 10:57:40 by jkokko            #+#    #+#             */
+/*   Updated: 2019/10/29 10:57:40 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int		ft_atoi(const char *str)
+char    *ft_strmap(char const *s, char (*f)(char))
 {
-	int res;
-	int sign;
+    int i;
+    char *new;
 
-	res = 0;
-	sign = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\r' || *str == '\f' || *str == ' ')
-		*str++;
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			sign = 1;
-		*str++;
-	}
-	if (!(ft_isdigit(*str)))
-		return (0);
-	while (ft_isdigit(*str))
-		res = res * 10 + (*str++ - 48);
-	if (sign == 1)
-		return (-res);
-	return (res);
+    if (!(new = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
+        return (NULL);
+    i = 0;
+    while (*s)
+        *new++ = f(*s++);
+    *new = '\0';
 }
