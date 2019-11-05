@@ -1,0 +1,8 @@
+ft_memmove
+ft_strlcat
+ft_strnstr
+ft_memdel
+ft_strsplit
+ft_lstadd
+ft_lstiter
+ft_lstmap
