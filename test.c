@@ -6,7 +6,7 @@
 /*   By: jkokko <jkokko@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:30:20 by jkokko            #+#    #+#             */
-/*   Updated: 2019/10/25 12:41:29 by jkokko           ###   ########.fr       */
+/*   Updated: 2019/11/05 14:15:34 by jkokko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,7 +183,7 @@ char *ft_strtrim(char const *s)
 }
 
 */
-
+/*
 int     ft_isdigit(int ch)
 {
     return ((ch >= '0' && ch <= '9') ? 1 : 0);
@@ -256,15 +256,34 @@ char    *ft_itoa(int n)
     }
     return (str);
 }
+*/
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	int i;
+	int y;
 
+	y = 0;
+	i = 0;
+	if (*needle == '\0')
+		return ((char*)haystack);
+	while (haystack[y] != '\0' || len--)
+	{
+		if (needle[i] == haystack[y])
+			i++;
+		else
+			i = 0;
+		y++;
+		if (needle[i] == '\0')
+			return ((char*)&haystack[y - i]);
+		if (haystack[y] == '\0')
+			return (NULL);
+	}
+	return (NULL);
+}
 
 int     main()
 {
-	unsigned int i;
-	int u = -200;
-	i = u;
-	printf("%d\n", i);
-
-	printf("%s\n", ft_itoa(ft_atoi("\t\n\v\r\f     -1235236    ")));
+	char *ptr = ft_strnstr("keikku keikku", "ku ke", 11);
+	printf("%s\n", ptr);
 	return (0);
 }
